@@ -17,9 +17,15 @@ export class AppComponent {
         Validators.minLength(5),
         Validators.pattern('[\\w\\-\\s\\/]+')
       ])),
-      lastname: new FormControl(""),
+      lastname: new FormControl("", this.textValidator),
       languages: new FormControl("")
     });
+  }
+
+  textValidator (control) {
+    if (control.value.length < 3) {
+      return { 'lastname': true };
+    }
   }
 
   onSubmit = function(user) {
