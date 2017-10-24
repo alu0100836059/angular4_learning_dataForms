@@ -18,3 +18,16 @@
   padding: 10px;
   margin: 5px;
 }
+
+input[type='submit'] {
+  background-color: green;
+}
+
+input[type='submit']:hover {
+  background-color: lightgreen;
+}
+
+input[type='submit']:disabled {
+  background-color: darkred;
+  color: white;
+}
