@@ -28,5 +28,5 @@
     <option value="JavaScript">JavaScript</option>
     <option value="PHP">PHP</option>
   </select>
-  <input type="submit" value="submit">
+  <input type="submit" [disabled] = "!miForm.valid" value="submit">
 </form>

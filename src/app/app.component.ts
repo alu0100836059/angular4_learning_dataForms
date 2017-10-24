@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,7 +12,11 @@ export class AppComponent {
   ngOnInit() {
       this.miForm = new FormGroup({
       // Podemos inicializar valores:
-      firstname: new FormControl("Jacobo"),
+      firstname: new FormControl("", Validators.compose([
+        Validators.required,
+        Validators.minLength(5),
+        Validators.pattern('[\\w\\-\\s\\/]+')
+      ])),
       lastname: new FormControl(""),
       languages: new FormControl("")
     });
